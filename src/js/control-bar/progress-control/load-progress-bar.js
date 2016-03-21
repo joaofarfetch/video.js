@@ -53,19 +53,19 @@ class LoadProgressBar extends Component {
     this.el_.style.width = percentify(bufferedEnd, duration);
 
     // add child elements to represent the individual buffered time ranges
-    for (let i = 0; i < buffered.length; i++) {
-      let start = buffered.start(i);
-      let end = buffered.end(i);
-      let part = children[i];
+    // for (let i = 0; i < buffered.length; i++) {
+    //   let start = buffered.start(i);
+    //   let end = buffered.end(i);
+    //   let part = children[i];
 
-      if (!part) {
-        part = this.el_.appendChild(Dom.createEl());
-      }
+    //   if (!part) {
+    //     part = this.el_.appendChild(Dom.createEl());
+    //   }
 
-      // set the percent based on the width of the progress bar (bufferedEnd)
-      part.style.left = percentify(start, bufferedEnd);
-      part.style.width = percentify(end - start, bufferedEnd);
-    }
+    //   // set the percent based on the width of the progress bar (bufferedEnd)
+    //   part.style.left = percentify(start, bufferedEnd);
+    //   part.style.width = percentify(end - start, bufferedEnd);
+    // }
 
     // remove unused buffered range elements
     for (let i = children.length; i > buffered.length; i--) {
